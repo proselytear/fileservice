@@ -20,4 +20,5 @@ spec:
               name: fileservice-volume
       volumes:
         - name: fileservice-volume
-          emptyDir: { }
+          persistentVolumeClaim:
+            claimName: local-persistent-volume-claim
