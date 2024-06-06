@@ -1,0 +1,11 @@
+version: "3"
+services:
+  filewriter:
+    build: .
+    volumes:
+      - filewriter:/app/storage
+    ports:
+      - 8989:8080
+
+volumes:
+  filewriter:
