@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: fileservice
+
+storage:
+  location: ${storage_location:/app/storage/storage.txt}
