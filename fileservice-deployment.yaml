@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fileservice-deployment
+spec:
+  selector:
+    matchLabels:
+      app: fileservice
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fileservice
+    spec:
+      containers:
+        - name: fileservice
+          image: proselyte/fileservice
+          volumeMounts:
+            - mountPath: /app/storage
+              name: fileservice-volume
+      volumes:
+        - name: fileservice-volume
+          emptyDir: { }

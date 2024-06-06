@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fileservice-service
+spec:
+  selector:
+    app: fileservice
+  type: NodePort
+  ports:
+    - protocol: "TCP"
+      port: 9090
+      targetPort: 8080
